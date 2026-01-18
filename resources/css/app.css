@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Cairo', sans-serif;
+        @apply bg-gray-50 text-gray-800;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+    .primary-btn {
+        @apply border-transparent text-white bg-green-600 hover:bg-green-700 focus:ring-green-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    }
+    .secondary-btn {
+        @apply border-green-600 text-green-700 bg-white hover:bg-green-50 focus:ring-green-500;
+    }
+}
