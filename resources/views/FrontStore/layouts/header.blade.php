@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <link rel="icon" type="image/png" href="{{ asset('storage/logo/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('storage/logo/logo.png') }}?v={{ time() }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('storage/logo/logo.png') }}?v={{ time() }}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>

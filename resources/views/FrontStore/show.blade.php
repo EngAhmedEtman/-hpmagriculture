@@ -157,8 +157,18 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
                 this.disabled = false;
             }, 2000);
             
-            // Optional: Show a fancy toast instead of alert
-            // alert('تم إضافة المنتج للسلة بنجاح');
+            // Dispatch Custom Event for Cart Badge
+            if (data.cart) {
+                let count = Object.keys(data.cart).length;
+                window.dispatchEvent(new CustomEvent('cart-updated', { detail: { count: count } }));
+            }
+
+            // Show Success Toast
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-4 left-4 bg-gray-900 text-white px-6 py-3 rounded-lg shadow-xl z-50 animate-fade-in-up flex items-center gap-3';
+            toast.innerHTML = '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span>تم إضافة المنتج للسلة بنجاح</span>';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
         })
         .catch(error => {
             console.error('Error:', error);

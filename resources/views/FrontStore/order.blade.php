@@ -2,7 +2,7 @@
 @section('title', 'إتمام الطلب - HPM Agriculture')
 
 @section('content')
-<main class="min-h-screen bg-gray-50 font-sans py-8 sm:py-12" x-data="checkoutForm()">
+<main class="min-h-screen bg-gray-100 font-sans py-8 sm:py-12" x-data="checkoutForm()">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-7xl mx-auto">
@@ -32,7 +32,7 @@
                 
                 <!-- Order Form - Compact Layout -->
                 <div class="lg:col-span-8 animate-fade-in-up">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
                         <!-- Header Strip -->
                         <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-3">
                             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white text-sm font-bold shadow-sm">1</span>
@@ -142,7 +142,7 @@
 
                 <!-- Order Summary & Submit -->
                 <div class="lg:col-span-4 space-y-6 animate-fade-in-left">
-                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 lg:sticky lg:top-8">
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 lg:sticky lg:top-8">
                          <h3 class="text-lg font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4 flex items-center gap-2">
                              <span class="flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white text-sm font-bold shadow-sm">2</span>
                              ملخص الدفع

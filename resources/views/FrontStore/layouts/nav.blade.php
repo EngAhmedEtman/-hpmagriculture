@@ -3,7 +3,9 @@
     $categories = Category::where('is_active', true)->get();
 @endphp
 
-<nav x-data="{ mobileMenuOpen: false, categoryDropdownOpen: false }" class="bg-white shadow-lg sticky top-0 z-[100] font-sans">
+<nav x-data="{ mobileMenuOpen: false, categoryDropdownOpen: false, cartCount: {{ count(session('cart', [])) }} }" 
+     @cart-updated.window="cartCount = $event.detail.count"
+     class="bg-white shadow-lg sticky top-0 z-[100] font-sans">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20">
             <!-- Logo Section -->
@@ -59,12 +61,19 @@
 
             <!-- Actions (Cart) -->
             <div class="hidden md:flex items-center space-x-reverse space-x-4">
-                <a href="{{ route('cart.index') }}" class="relative p-2 text-gray-600 hover:text-green-600 transition-colors">
+                <a href="{{ route('cart.index') }}" class="relative p-2 text-gray-600 hover:text-green-600 transition-colors group">
                     <span class="sr-only">السلة</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 transform group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    <!-- Badge can be added here if cart count is available -->
+                    <!-- Cart Badge -->
+                    <span x-show="cartCount > 0" 
+                          x-text="cartCount"
+                          x-transition:enter="transition transform ease-out duration-300"
+                          x-transition:enter-start="scale-0"
+                          x-transition:enter-end="scale-100"
+                          class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">
+                    </span>
                 </a>
                 
                 {{-- <a href="#" class="btn primary-btn text-sm px-5 py-2">تسجيل الدخول</a> --}}

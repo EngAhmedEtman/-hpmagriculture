@@ -38,6 +38,10 @@ $request->validate([
             'message' => $request->message,
         ]);
 
+        if ($request->wantsJson()) {
+            return response()->json(['success' => 'تم استلام طلبك بنجاح! سنتواصل معك قريبًا.']);
+        }
+
         return redirect()->back()->with('success', 'تم الارسال بنجاح!');
     }
 }

@@ -25,6 +25,7 @@
                     <li><a href="{{ route('storeProducts') }}" class="hover:text-green-500 transition-colors flex items-center gap-2"><span class="text-green-600">&lsaquo;</span> المنتجات</a></li>
                     <li><a href="{{ route('aboutUs') }}" class="hover:text-green-500 transition-colors flex items-center gap-2"><span class="text-green-600">&lsaquo;</span> من نحن</a></li>
                     <li><a href="{{ route('contactForm') }}" class="hover:text-green-500 transition-colors flex items-center gap-2"><span class="text-green-600">&lsaquo;</span> تواصل معنا</a></li>
+                    <li><a href="{{ route('faqs') }}" class="hover:text-green-500 transition-colors flex items-center gap-2"><span class="text-green-600">&lsaquo;</span> الأسئلة الشائعة</a></li>
                 </ul>
             </div>
 
@@ -42,7 +43,7 @@
                         <div class="bg-gray-800 p-2 rounded-lg group-hover:bg-green-600 transition-colors">
                              <svg class="w-5 h-5 text-green-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <a href="mailto:info@hpm.com" class="hover:text-white text-sm">info@hpm.com</a>
+                        <a href="mailto:official@hpmagriculture.com" class="hover:text-white text-sm">official@hpmagriculture.com</a>
                     </li>
                     <li class="flex items-center gap-3 group">
                         <div class="bg-gray-800 p-2 rounded-lg group-hover:bg-green-600 transition-colors">

@@ -2,7 +2,8 @@
 @section('title', 'سلة المشتريات - HPM Agriculture')
 
 @section('content')
-<main class="min-h-screen bg-gray-50 font-sans py-12" x-data="cartStore()">
+@section('content')
+<main class="min-h-screen bg-gray-100 font-sans py-12" x-data="cartStore()">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
@@ -33,7 +34,7 @@
                             $calculatedTotal += $rowTotal;
                         @endphp
                         
-                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-200 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-slide-in-up" style="animation-delay: {{ $loop->index * 100 }}ms">
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-md border border-gray-200 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-slide-in-up" state="animation-delay: {{ $loop->index * 100 }}ms">
                             <!-- Image -->
                             <div class="w-full sm:w-24 h-24 bg-gray-50 rounded-xl flex-shrink-0 flex items-center justify-center p-2 border border-gray-100 relative overflow-hidden group">
                                 <img src="{{ asset('storage/'.$item['image']) }}" alt="{{ $item['name'] }}" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500">
@@ -85,7 +86,7 @@
                 </div>
 
                 <!-- Order Summary -->
-                <div class="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 lg:sticky lg:top-8 animate-fade-in-left">
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 lg:sticky lg:top-8 animate-fade-in-left">
                     <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                         <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         ملخص الطلب
